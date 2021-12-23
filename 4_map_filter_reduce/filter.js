@@ -23,8 +23,8 @@ for (const p of products) {
 console.log(over20000);
 // [ { name: '긴팔티', price: 20000 }, { name: '후드티', price: 30000 }, { name: '바지', price: 25000 } ]
 
+// -----
 // filter 함수로 리팩토링
-
 const filter = (f, iter) => {
   const res = [];
   for (const a of iter) {
