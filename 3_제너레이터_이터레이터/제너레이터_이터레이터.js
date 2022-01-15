@@ -24,3 +24,6 @@ console.log(iter.next()); // { value: 10, done: true }
 for (const a of gen()) {
   console.log(a); // 1 2 3
 }
+
+const newGen = [...gen()];
+console.log(newGen);
