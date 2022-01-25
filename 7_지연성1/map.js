@@ -6,3 +6,19 @@
   - 느긋한 계산법
   - 제너레이터/이터레이터 프로토콜을 기반으로 구현
  */
+
+// L.map
+const L = {};
+L.map = function* (func, iter) {
+  for (const el of iter) {
+    yield func(el);
+  }
+};
+
+let iterator = L.map((a) => a + 10, [1, 2, 3]); // (*) 이상태 까지는 아무것도 평가가 되지 않음.
+console.log(iterator.next()); // (**) next를 통해서 내가 평가한 만큼의 값만 가져온다.
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+console.log([...iterator]); // [11, 12, 13]
